@@ -4,6 +4,6 @@ from flask_cors import CORS
 app = Flask(__name__)
 CORS(app)
 
-@app.router("/api/hello")
+@app.route("/api/hello")
 def hello( ):
     return jsonify(message="Hay from Flask")
