@@ -3,76 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <title>Rysie Buduje</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #fff;
-        }
-        header {
-            background-color: #f5f5f5;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .top-images {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 20px;
-        }
-        .top-images img {
-            height: 120px;
-            border-radius: 10px;
-            object-fit: cover;
-        }
-        h1 {
-            text-align: center;
-            margin: 40px 0 10px;
-        }
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 10px;
-            padding: 20px;
-        }
-        .gallery img {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-        }
-        footer {
-            text-align: center;
-            background-color: #eee;
-            padding: 10px;
-            font-size: 14px;
-        }
-    </style>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-
     <header>
-        <div class="top-images">
-            <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo Rysie Buduje">
-            <img src="{{ url_for('static', filename='director.jpg') }}" alt="Dyrektor firmy">
-        </div>
+        <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo" class="logo">
+        <img src="{{ url_for('static', filename='director.jpg') }}" alt="Dyrektor" class="director">
     </header>
 
     <main>
         <h1>Budujemy z sercem i doświadczeniem</h1>
+        <p>
+            Jesteśmy firmą budowlaną z wieloletnim doświadczeniem. Nasz zespół tworzą wykwalifikowani fachowcy,
+            którzy realizują projekty z najwyższą starannością i pasją.
+        </p>
+
+        <section class="gallery">
+            <img src="{{ url_for('static', filename='work1.jpg') }}" alt="Projekt 1">
+            <img src="{{ url_for('static', filename='work2.jpg') }}" alt="Projekt 2">
+            <img src="{{ url_for('static', filename='work3.jpg') }}" alt="Projekt 3">
+            <img src="{{ url_for('static', filename='work4.jpg') }}" alt="Projekt 4">
+        </section>
+
+        <section class="contact">
+            <h2>Kontakt</h2>
+            <p>Telefon: +48 123 456 789</p>
+            <p>Email: kontakt@rysiebuduje.pl</p>
+            <p>Adres: ul. Przykładowa 1, Warszawa</p>
+        </section>
     </main>
 
-    <section class="gallery">
-        <img src="{{ url_for('static', filename='work1.jpg') }}" alt="Proces pracy 1">
-        <img src="{{ url_for('static', filename='work2.jpg') }}" alt="Proces pracy 2">
-        <img src="{{ url_for('static', filename='work3.jpg') }}" alt="Proces pracy 3">
-        <img src="{{ url_for('static', filename='work4.jpg') }}" alt="Proces pracy 4">
-    </section>
-
     <footer>
-        &copy; 2025 Rysie Buduje — firma budowlana. Wszelkie prawa zastrzeżone.
+        <p>&copy; 2025 Rysie Buduje — firma budowlana. Wszelkie prawa zastrzeżone.</p>
     </footer>
-
 </body>
 </html>
